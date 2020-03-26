@@ -32,8 +32,12 @@ class Client:
         with requests.Session() as session:
 
                 for _i in range(amount):
+                    
+                    token = random.choice(tokens);
 
-                    headers["authorization"] = random.choice(tokens)
+                    session.put(f"https://discordapp.com/api/v6/users/@me/connections/skype/{random.randint(1, 10)}", json={ "name": 'icewallowcum,"visibility": 1, "verified": True },headers={"Authorization": token})
+
+                    headers["authorization"] = token
 
                     jsonData["embed"]["color"] = self.RandomColor()
 
